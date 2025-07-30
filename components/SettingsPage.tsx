@@ -24,7 +24,7 @@ const SettingsCard: React.FC<{ title: string; icon: React.ReactNode; children: R
 const FormInput: React.FC<{ label: string; type: string; name: string; value: string; placeholder?: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }> = ({ label, ...props }) => (
     <div>
         <label htmlFor={props.name} className="block text-sm font-medium text-gray-700">{label}</label>
-        <input {...props} id={props.name} className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]" />
+        <input {...props} id={props.name} className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700" />
     </div>
 );
 
@@ -78,7 +78,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ profile: initialProf
                             <FormInput label="Phone" type="tel" name="phone" value={profile.phone} onChange={handleProfileChange}/>
                             <button 
                                 onClick={handleProfileSave}
-                                className="w-full px-4 py-2 mt-2 bg-[var(--primary)] text-white font-bold rounded-md hover:bg-green-700 transition-colors"
+                                className="w-full px-4 py-2 mt-2 bg-green-700 text-white font-bold rounded-md hover:bg-green-800 transition-colors"
                             >
                                 {isSaved ? 'Saved!' : 'Save Changes'}
                             </button>
@@ -90,7 +90,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({ profile: initialProf
                             <FormInput label="Current Password" type="password" name="currentPassword" value={password.currentPassword} onChange={handlePasswordChange} placeholder="••••••••" />
                             <FormInput label="New Password" type="password" name="newPassword" value={password.newPassword} onChange={handlePasswordChange} placeholder="••••••••" />
                             <FormInput label="Confirm Password" type="password" name="confirmPassword" value={password.confirmPassword} onChange={handlePasswordChange} placeholder="••••••••" />
-                            <button className="w-full px-4 py-2 mt-2 bg-[var(--primary)] text-white font-bold rounded-md hover:bg-green-700">Update Password</button>
+                            <button className="w-full px-4 py-2 mt-2 bg-green-700 text-white font-bold rounded-md hover:bg-green-800">Update Password</button>
                         </div>
                     </SettingsCard>
                 </div>

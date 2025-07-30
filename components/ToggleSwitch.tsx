@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface ToggleSwitchProps {
@@ -10,8 +11,8 @@ export const ToggleSwitch: React.FC<ToggleSwitchProps> = ({ enabled, onChange })
     <button
       type="button"
       className={`${
-        enabled ? 'bg-[var(--primary)]' : 'bg-gray-200'
-      } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2`}
+        enabled ? 'bg-green-700' : 'bg-gray-200'
+      } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2`}
       role="switch"
       aria-checked={enabled}
       onClick={() => onChange(!enabled)}

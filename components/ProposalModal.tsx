@@ -61,48 +61,48 @@ export const ProposalModal: React.FC<ProposalModalProps> = ({ isOpen, onClose, o
 
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex justify-center items-center p-4">
-      <div className="bg-white border border-[var(--border-color)] rounded-lg shadow-xl p-8 w-full max-w-lg">
-        <h2 className="text-2xl font-bold mb-6 text-[var(--text-dark)]">{proposal ? 'Edit' : 'Create'} Proposal</h2>
+      <div className="bg-white border border-gray-200 rounded-lg shadow-xl p-8 w-full max-w-lg">
+        <h2 className="text-2xl font-bold mb-6 text-gray-900">{proposal ? 'Edit' : 'Create'} Proposal</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-[var(--text-light)]">Proposal Title</label>
-            <input type="text" name="title" value={formData.title || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]" />
+            <label className="block text-sm font-medium text-gray-600">Proposal Title</label>
+            <input type="text" name="title" value={formData.title || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-                <label className="block text-sm font-medium text-[var(--text-light)]">Client Name</label>
-                <input type="text" name="clientName" value={formData.clientName || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]" />
+                <label className="block text-sm font-medium text-gray-600">Client Name</label>
+                <input type="text" name="clientName" value={formData.clientName || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700" />
             </div>
             <div>
-                <label className="block text-sm font-medium text-[var(--text-light)]">Client Company</label>
-                <input type="text" name="clientCompany" value={formData.clientCompany || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]" />
+                <label className="block text-sm font-medium text-gray-600">Client Company</label>
+                <input type="text" name="clientCompany" value={formData.clientCompany || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700" />
             </div>
           </div>
           <div className="grid grid-cols-3 gap-4">
              <div>
-                <label className="block text-sm font-medium text-[var(--text-light)]">Value</label>
-                <input type="number" name="value" value={formData.value || 0} onChange={handleChange} className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]" />
+                <label className="block text-sm font-medium text-gray-600">Value</label>
+                <input type="number" name="value" value={formData.value || 0} onChange={handleChange} className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700" />
             </div>
             <div>
-                <label className="block text-sm font-medium text-[var(--text-light)]">Currency</label>
-                <input type="text" name="currency" value={formData.currency || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]" />
+                <label className="block text-sm font-medium text-gray-600">Currency</label>
+                <input type="text" name="currency" value={formData.currency || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700" />
             </div>
             <div>
-                <label className="block text-sm font-medium text-[var(--text-light)]">Status</label>
-                <select name="status" value={formData.status} onChange={handleChange} className="mt-1 block w-full bg-white border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]">
+                <label className="block text-sm font-medium text-gray-600">Status</label>
+                <select name="status" value={formData.status} onChange={handleChange} className="mt-1 block w-full bg-white border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700">
                     {Object.values(ProposalStatus).map(s => <option key={s} value={s}>{s}</option>)}
                 </select>
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-[var(--text-light)]">Valid Until</label>
-            <input type="date" name="validUntil" value={formData.validUntil || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)]" />
+            <label className="block text-sm font-medium text-gray-600">Valid Until</label>
+            <input type="date" name="validUntil" value={formData.validUntil || ''} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700" />
           </div>
           <div className="flex justify-end space-x-4 pt-4">
             <button type="button" onClick={onClose} className="px-4 py-2 bg-gray-200 text-gray-800 font-bold rounded-md hover:bg-gray-300">
               Cancel
             </button>
-            <button type="submit" className="px-4 py-2 bg-[var(--primary)] text-white font-bold rounded-md hover:bg-green-700">
+            <button type="submit" className="px-4 py-2 bg-green-700 text-white font-bold rounded-md hover:bg-green-800">
               Save Proposal
             </button>
           </div>

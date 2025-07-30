@@ -54,7 +54,7 @@ const LeadRow: React.FC<{ lead: Lead; onUpdate: (lead: Lead) => void; onEdit: (l
                     <select
                         value={lead.status}
                         onChange={handleStatusChange}
-                        className="pl-7 pr-8 py-1.5 text-sm rounded-md border-gray-200 bg-gray-50 hover:bg-gray-100 focus:ring-1 focus:ring-[var(--primary)] focus:border-[var(--primary)] appearance-none transition-colors"
+                        className="pl-7 pr-8 py-1.5 text-sm rounded-md border-gray-200 bg-gray-50 hover:bg-gray-100 focus:ring-1 focus:ring-green-700 focus:border-green-700 appearance-none transition-colors"
                     >
                         {Object.values(LeadStatus).map(status => (
                             <option key={status} value={status}>{status}</option>
@@ -127,7 +127,7 @@ export const LeadsPage: React.FC<LeadsPageProps> = ({ leads, onAddLead, onUpdate
                 </div>
                 <button
                     onClick={() => handleOpenModal()}
-                    className="px-4 py-2 bg-[var(--primary)] text-white font-bold rounded-md hover:bg-green-700 flex items-center"
+                    className="px-4 py-2 bg-green-700 text-white font-bold rounded-md hover:bg-green-800 flex items-center"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" /></svg>
                     Add Lead

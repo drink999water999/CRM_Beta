@@ -52,13 +52,13 @@ export const CreateTicketPage: React.FC<CreateTicketPageProps> = ({ onAddTicket,
   
   return (
     <div className="space-y-6">
-      <h1 className="text-4xl font-bold text-[--text-primary]">Create a New Ticket</h1>
-      <div className="bg-[--bg-dark-secondary] border border-[--border-dark] rounded-lg shadow-xl p-8 w-full max-w-2xl mx-auto">
-        <p className="text-[--text-secondary] mb-6">Submit a support request or a feature idea. Our team will get back to you shortly.</p>
+      <h1 className="text-4xl font-bold text-gray-900">Create a New Ticket</h1>
+      <div className="bg-white border border-gray-200 rounded-lg shadow-xl p-8 w-full max-w-2xl mx-auto">
+        <p className="text-gray-600 mb-6">Submit a support request or a feature idea. Our team will get back to you shortly.</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-[--text-secondary]">I am a...</label>
-            <select name="user" value={formData.user} onChange={handleChange} required className="mt-1 block w-full bg-transparent border border-[--border-dark] rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[--accent-primary] focus:border-[--accent-primary]">
+            <label className="block text-sm font-medium text-gray-700">I am a...</label>
+            <select name="user" value={formData.user} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700">
               <option value="" disabled>Select your account</option>
               <optgroup label="Retailers">
                 {retailers.map(r => <option key={`Retailer-${r.id}`} value={`Retailer-${r.id}`}>{r.name} ({r.company})</option>)}
@@ -70,26 +70,26 @@ export const CreateTicketPage: React.FC<CreateTicketPageProps> = ({ onAddTicket,
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[--text-secondary]">Ticket Type</label>
-            <select name="type" value={formData.type} onChange={handleChange} required className="mt-1 block w-full bg-transparent border border-[--border-dark] rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[--accent-primary] focus:border-[--accent-primary]">
+            <label className="block text-sm font-medium text-gray-700">Ticket Type</label>
+            <select name="type" value={formData.type} onChange={handleChange} required className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700">
               <option value={TicketType.Support}>Support</option>
               <option value={TicketType.FeatureRequest}>Feature Request</option>
             </select>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[--text-secondary]">Title</label>
-            <input type="text" name="title" value={formData.title} onChange={handleChange} required placeholder="e.g., Issue with my last order" className="mt-1 block w-full bg-transparent border border-[--border-dark] rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[--accent-primary] focus:border-[--accent-primary]" />
+            <label className="block text-sm font-medium text-gray-700">Title</label>
+            <input type="text" name="title" value={formData.title} onChange={handleChange} required placeholder="e.g., Issue with my last order" className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700" />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[--text-secondary]">Description</label>
-            <textarea name="description" value={formData.description} onChange={handleChange} required rows={5} placeholder="Please provide as much detail as possible." className="mt-1 block w-full bg-transparent border border-[--border-dark] rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[--accent-primary] focus:border-[--accent-primary]"></textarea>
+            <label className="block text-sm font-medium text-gray-700">Description</label>
+            <textarea name="description" value={formData.description} onChange={handleChange} required rows={5} placeholder="Please provide as much detail as possible." className="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-700 focus:border-green-700"></textarea>
           </div>
           
           <div className="flex justify-end items-center space-x-4 pt-4">
-             {isSubmitted && <span className="text-green-400">Ticket submitted successfully!</span>}
-            <button type="submit" className="px-6 py-2 bg-[--accent-primary] text-black font-bold rounded-md hover:bg-teal-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 focus:ring-offset-gray-800">
+             {isSubmitted && <span className="text-green-600">Ticket submitted successfully!</span>}
+            <button type="submit" className="px-6 py-2 bg-green-700 text-white font-bold rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
               Submit Ticket
             </button>
           </div>

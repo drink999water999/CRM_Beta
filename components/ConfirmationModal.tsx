@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface ConfirmationModalProps {
@@ -13,7 +14,7 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ isOpen, on
 
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex justify-center items-center p-4" aria-modal="true" role="dialog">
-      <div className="bg-white border border-[var(--border-color)] rounded-lg shadow-xl p-6 w-full max-w-md">
+      <div className="bg-white border border-gray-200 rounded-lg shadow-xl p-6 w-full max-w-md">
         <div className="flex items-start">
             <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                 <svg className="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
@@ -21,11 +22,11 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ isOpen, on
                 </svg>
             </div>
             <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                <h3 className="text-lg leading-6 font-bold text-[var(--text-dark)]" id="modal-title">
+                <h3 className="text-lg leading-6 font-bold text-gray-900" id="modal-title">
                   {title}
                 </h3>
                 <div className="mt-2">
-                  <div className="text-sm text-[var(--text-light)]">
+                  <div className="text-sm text-gray-600">
                     {message}
                   </div>
                 </div>
