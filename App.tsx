@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { Dashboard } from './components/Dashboard';
@@ -90,93 +90,93 @@ const App: React.FC = () => {
     return response.json();
   };
 
-  const addRetailer = useCallback(async (retailer: Omit<Retailer, 'id'>) => {
+  const addRetailer = async (retailer: Omit<Retailer, 'id'>) => {
     await apiRequest('/api/retailers', 'POST', retailer);
     await fetchData('/api/retailers', setRetailers);
-  }, []);
+  };
 
-  const updateRetailer = useCallback(async (updatedRetailer: Retailer) => {
+  const updateRetailer = async (updatedRetailer: Retailer) => {
     await apiRequest('/api/retailers', 'PUT', updatedRetailer);
     await fetchData('/api/retailers', setRetailers);
-  }, []);
+  };
 
-  const addVendor = useCallback(async (vendor: Omit<Vendor, 'id'>) => {
+  const addVendor = async (vendor: Omit<Vendor, 'id'>) => {
     await apiRequest('/api/vendors', 'POST', vendor);
     await fetchData('/api/vendors', setVendors);
-  }, []);
+  };
 
-  const updateVendor = useCallback(async (updatedVendor: Vendor) => {
+  const updateVendor = async (updatedVendor: Vendor) => {
     await apiRequest('/api/vendors', 'PUT', updatedVendor);
     await fetchData('/api/vendors', setVendors);
-  }, []);
+  };
   
-  const addLead = useCallback(async (lead: Omit<Lead, 'id'>) => {
+  const addLead = async (lead: Omit<Lead, 'id'>) => {
     await apiRequest('/api/leads', 'POST', lead);
     await fetchData('/api/leads', setLeads);
-  }, []);
+  };
 
-  const updateLead = useCallback(async (updatedLead: Lead) => {
+  const updateLead = async (updatedLead: Lead) => {
     await apiRequest('/api/leads', 'PUT', updatedLead);
     await fetchData('/api/leads', setLeads);
-  }, []);
+  };
 
-  const deleteLead = useCallback(async (leadId: number) => {
+  const deleteLead = async (leadId: number) => {
     await apiRequest('/api/leads', 'DELETE', { id: leadId });
     await fetchData('/api/leads', setLeads);
-  }, []);
+  };
 
-  const addTicket = useCallback(async (ticket: Omit<Ticket, 'id' | 'status' | 'createdAt'>) => {
+  const addTicket = async (ticket: Omit<Ticket, 'id' | 'status' | 'createdAt'>) => {
     await apiRequest('/api/tickets', 'POST', ticket);
     await fetchData('/api/tickets', setTickets);
-  }, []);
+  };
 
-  const updateTicket = useCallback(async (updatedTicket: Ticket) => {
+  const updateTicket = async (updatedTicket: Ticket) => {
     await apiRequest('/api/tickets', 'PUT', updatedTicket);
     await fetchData('/api/tickets', setTickets);
-  }, []);
+  };
 
-  const addProposal = useCallback(async (proposal: Omit<Proposal, 'id'>) => {
+  const addProposal = async (proposal: Omit<Proposal, 'id'>) => {
     await apiRequest('/api/proposals', 'POST', proposal);
     await fetchData('/api/proposals', setProposals);
-  }, []);
+  };
 
-  const updateProposal = useCallback(async (updatedProposal: Proposal) => {
+  const updateProposal = async (updatedProposal: Proposal) => {
     await apiRequest('/api/proposals', 'PUT', updatedProposal);
     await fetchData('/api/proposals', setProposals);
-  }, []);
+  };
 
-  const deleteProposal = useCallback(async (proposalId: number) => {
+  const deleteProposal = async (proposalId: number) => {
     await apiRequest('/api/proposals', 'DELETE', { id: proposalId });
     await fetchData('/api/proposals', setProposals);
-  }, []);
+  };
   
-  const addDeal = useCallback(async (deal: Omit<Deal, 'id'>) => {
+  const addDeal = async (deal: Omit<Deal, 'id'>) => {
     await apiRequest('/api/deals', 'POST', deal);
     await fetchData('/api/deals', setDeals);
-  }, []);
+  };
 
-  const updateDeal = useCallback(async (updatedDeal: Deal) => {
+  const updateDeal = async (updatedDeal: Deal) => {
     await apiRequest('/api/deals', 'PUT', updatedDeal);
     await fetchData('/api/deals', setDeals);
-  }, []);
+  };
 
-  const deleteDeal = useCallback(async (dealId: number) => {
+  const deleteDeal = async (dealId: number) => {
     await apiRequest('/api/deals', 'DELETE', { id: dealId });
     await fetchData('/api/deals', setDeals);
-  }, []);
+  };
 
-  const handleUpdateDealStage = useCallback(async (dealId: number, newStage: DealStage) => {
+  const handleUpdateDealStage = async (dealId: number, newStage: DealStage) => {
     const dealToUpdate = deals.find(d => d.id === dealId);
     if (dealToUpdate) {
         const updatedDeal = { ...dealToUpdate, stage: newStage };
         await updateDeal(updatedDeal);
     }
-  }, [deals, updateDeal]);
+  };
 
-  const handleUpdateProfile = useCallback(async (profile: UserProfile) => {
+  const handleUpdateProfile = async (profile: UserProfile) => {
     const updatedProfile = await apiRequest('/api/profile', 'PUT', profile);
     setUserProfile(updatedProfile);
-  }, []);
+  };
   
   if (isLoading) {
     return (
