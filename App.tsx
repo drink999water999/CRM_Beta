@@ -96,7 +96,7 @@ const App: React.FC = () => {
   }, [apiRequest, fetchData]);
 
   const updateRetailer = useCallback(async (updatedRetailer: Retailer) => {
-    await apiRequest('/api/retailers', 'PUT', updatedRetailer);
+    await apiRequest(`/api/retailers/${updatedRetailer.id}`, 'PUT', updatedRetailer);
     await fetchData('/api/retailers', setRetailers);
   }, [apiRequest, fetchData]);
 
@@ -106,7 +106,7 @@ const App: React.FC = () => {
   }, [apiRequest, fetchData]);
 
   const updateVendor = useCallback(async (updatedVendor: Vendor) => {
-    await apiRequest('/api/vendors', 'PUT', updatedVendor);
+    await apiRequest(`/api/vendors/${updatedVendor.id}`, 'PUT', updatedVendor);
     await fetchData('/api/vendors', setVendors);
   }, [apiRequest, fetchData]);
   
@@ -116,12 +116,12 @@ const App: React.FC = () => {
   }, [apiRequest, fetchData]);
 
   const updateLead = useCallback(async (updatedLead: Lead) => {
-    await apiRequest('/api/leads', 'PUT', updatedLead);
+    await apiRequest(`/api/leads/${updatedLead.id}`, 'PUT', updatedLead);
     await fetchData('/api/leads', setLeads);
   }, [apiRequest, fetchData]);
 
   const deleteLead = useCallback(async (leadId: number) => {
-    await apiRequest('/api/leads', 'DELETE', { id: leadId });
+    await apiRequest(`/api/leads/${leadId}`, 'DELETE');
     await fetchData('/api/leads', setLeads);
   }, [apiRequest, fetchData]);
 
@@ -131,7 +131,7 @@ const App: React.FC = () => {
   }, [apiRequest, fetchData]);
 
   const updateTicket = useCallback(async (updatedTicket: Ticket) => {
-    await apiRequest('/api/tickets', 'PUT', updatedTicket);
+    await apiRequest(`/api/tickets/${updatedTicket.id}`, 'PUT', updatedTicket);
     await fetchData('/api/tickets', setTickets);
   }, [apiRequest, fetchData]);
 
@@ -141,12 +141,12 @@ const App: React.FC = () => {
   }, [apiRequest, fetchData]);
 
   const updateProposal = useCallback(async (updatedProposal: Proposal) => {
-    await apiRequest('/api/proposals', 'PUT', updatedProposal);
+    await apiRequest(`/api/proposals/${updatedProposal.id}`, 'PUT', updatedProposal);
     await fetchData('/api/proposals', setProposals);
   }, [apiRequest, fetchData]);
 
   const deleteProposal = useCallback(async (proposalId: number) => {
-    await apiRequest('/api/proposals', 'DELETE', { id: proposalId });
+    await apiRequest(`/api/proposals/${proposalId}`, 'DELETE');
     await fetchData('/api/proposals', setProposals);
   }, [apiRequest, fetchData]);
   
@@ -156,12 +156,12 @@ const App: React.FC = () => {
   }, [apiRequest, fetchData]);
 
   const updateDeal = useCallback(async (updatedDeal: Deal) => {
-    await apiRequest('/api/deals', 'PUT', updatedDeal);
+    await apiRequest(`/api/deals/${updatedDeal.id}`, 'PUT', updatedDeal);
     await fetchData('/api/deals', setDeals);
   }, [apiRequest, fetchData]);
 
   const deleteDeal = useCallback(async (dealId: number) => {
-    await apiRequest('/api/deals', 'DELETE', { id: dealId });
+    await apiRequest(`/api/deals/${dealId}`, 'DELETE');
     await fetchData('/api/deals', setDeals);
   }, [apiRequest, fetchData]);
 

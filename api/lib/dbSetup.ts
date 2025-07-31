@@ -26,9 +26,9 @@ const createTableAndSeed = async (
 ) => {
     try {
         await sql.query(`CREATE TABLE IF NOT EXISTS ${tableName} (${schema});`);
-        const { rowCount } = await sql.query(`SELECT 1 FROM ${tableName} LIMIT 1;`);
+        const result = await sql.query(`SELECT 1 FROM ${tableName} LIMIT 1;`);
         
-        if (rowCount === 0) {
+        if (result.rowCount === 0) {
             console.log(`Seeding ${tableName}...`);
             const columns = Object.keys(initialData[0]).map(camelToSnake);
             for (const item of initialData) {
