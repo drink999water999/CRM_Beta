@@ -91,78 +91,78 @@ const App: React.FC = () => {
   };
 
   const addRetailer = async (retailer: Omit<Retailer, 'id'>) => {
-    const newRetailer = await apiRequest('/api/retailers', 'POST', retailer);
-    setRetailers(prev => [...prev, newRetailer]);
+    await apiRequest('/api/retailers', 'POST', retailer);
+    await fetchData('/api/retailers', setRetailers);
   };
 
   const updateRetailer = async (updatedRetailer: Retailer) => {
-    const returnedRetailer = await apiRequest('/api/retailers', 'PUT', updatedRetailer);
-    setRetailers(prev => prev.map(r => r.id === returnedRetailer.id ? returnedRetailer : r));
+    await apiRequest('/api/retailers', 'PUT', updatedRetailer);
+    await fetchData('/api/retailers', setRetailers);
   };
 
   const addVendor = async (vendor: Omit<Vendor, 'id'>) => {
-    const newVendor = await apiRequest('/api/vendors', 'POST', vendor);
-    setVendors(prev => [...prev, newVendor]);
+    await apiRequest('/api/vendors', 'POST', vendor);
+    await fetchData('/api/vendors', setVendors);
   };
 
   const updateVendor = async (updatedVendor: Vendor) => {
-    const returnedVendor = await apiRequest('/api/vendors', 'PUT', updatedVendor);
-    setVendors(prev => prev.map(v => v.id === returnedVendor.id ? returnedVendor : v));
+    await apiRequest('/api/vendors', 'PUT', updatedVendor);
+    await fetchData('/api/vendors', setVendors);
   };
   
   const addLead = async (lead: Omit<Lead, 'id'>) => {
-    const newLead = await apiRequest('/api/leads', 'POST', lead);
-    setLeads(prev => [...prev, newLead]);
+    await apiRequest('/api/leads', 'POST', lead);
+    await fetchData('/api/leads', setLeads);
   };
 
   const updateLead = async (updatedLead: Lead) => {
-    const returnedLead = await apiRequest('/api/leads', 'PUT', updatedLead);
-    setLeads(prev => prev.map(l => l.id === returnedLead.id ? returnedLead : l));
+    await apiRequest('/api/leads', 'PUT', updatedLead);
+    await fetchData('/api/leads', setLeads);
   };
 
   const deleteLead = async (leadId: number) => {
     await apiRequest('/api/leads', 'DELETE', { id: leadId });
-    setLeads(prev => prev.filter(l => l.id !== leadId));
+    await fetchData('/api/leads', setLeads);
   };
 
   const addTicket = async (ticket: Omit<Ticket, 'id' | 'status' | 'createdAt'>) => {
-    const newTicket = await apiRequest('/api/tickets', 'POST', ticket);
-    setTickets(prev => [...prev, newTicket]);
+    await apiRequest('/api/tickets', 'POST', ticket);
+    await fetchData('/api/tickets', setTickets);
   };
 
   const updateTicket = async (updatedTicket: Ticket) => {
-    const returnedTicket = await apiRequest('/api/tickets', 'PUT', updatedTicket);
-    setTickets(prev => prev.map(t => t.id === returnedTicket.id ? returnedTicket : t));
+    await apiRequest('/api/tickets', 'PUT', updatedTicket);
+    await fetchData('/api/tickets', setTickets);
   };
 
   const addProposal = async (proposal: Omit<Proposal, 'id'>) => {
-    const newProposal = await apiRequest('/api/proposals', 'POST', proposal);
-    setProposals(prev => [...prev, newProposal]);
+    await apiRequest('/api/proposals', 'POST', proposal);
+    await fetchData('/api/proposals', setProposals);
   };
 
   const updateProposal = async (updatedProposal: Proposal) => {
-    const returnedProposal = await apiRequest('/api/proposals', 'PUT', updatedProposal);
-    setProposals(prev => prev.map(p => p.id === returnedProposal.id ? returnedProposal : p));
+    await apiRequest('/api/proposals', 'PUT', updatedProposal);
+    await fetchData('/api/proposals', setProposals);
   };
 
   const deleteProposal = async (proposalId: number) => {
     await apiRequest('/api/proposals', 'DELETE', { id: proposalId });
-    setProposals(prev => prev.filter(p => p.id !== proposalId));
+    await fetchData('/api/proposals', setProposals);
   };
   
   const addDeal = async (deal: Omit<Deal, 'id'>) => {
-    const newDeal = await apiRequest('/api/deals', 'POST', deal);
-    setDeals(prev => [...prev, newDeal]);
+    await apiRequest('/api/deals', 'POST', deal);
+    await fetchData('/api/deals', setDeals);
   };
 
   const updateDeal = async (updatedDeal: Deal) => {
-    const returnedDeal = await apiRequest('/api/deals', 'PUT', updatedDeal);
-    setDeals(prev => prev.map(d => d.id === returnedDeal.id ? returnedDeal : d));
+    await apiRequest('/api/deals', 'PUT', updatedDeal);
+    await fetchData('/api/deals', setDeals);
   };
 
   const deleteDeal = async (dealId: number) => {
     await apiRequest('/api/deals', 'DELETE', { id: dealId });
-    setDeals(prev => prev.filter(d => d.id !== dealId));
+    await fetchData('/api/deals', setDeals);
   };
 
   const handleUpdateDealStage = async (dealId: number, newStage: DealStage) => {
@@ -174,8 +174,8 @@ const App: React.FC = () => {
   };
 
   const handleUpdateProfile = async (profile: UserProfile) => {
-    const updatedProfile = await apiRequest('/api/profile', 'PUT', profile);
-    setUserProfile(updatedProfile);
+    await apiRequest('/api/profile', 'PUT', profile);
+    await fetchData('/api/profile', setUserProfile);
   };
   
   if (isLoading) {
