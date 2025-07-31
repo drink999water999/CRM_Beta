@@ -6,6 +6,12 @@
     }
   },
   "rewrites": [
+    { "source": "/api/deals/:id", "destination": "/api/deals" },
+    { "source": "/api/leads/:id", "destination": "/api/leads" },
+    { "source": "/api/proposals/:id", "destination": "/api/proposals" },
+    { "source": "/api/retailers/:id", "destination": "/api/retailers" },
+    { "source": "/api/tickets/:id", "destination": "/api/tickets" },
+    { "source": "/api/vendors/:id", "destination": "/api/vendors" },
     {
       "source": "/:path((?!api/|.*\\..*).*)",
       "destination": "/index.html"

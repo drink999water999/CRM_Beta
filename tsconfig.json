@@ -16,5 +16,5 @@
   "include": [
     "."
   ],
-  "exclude": ["node_modules", "api", "dist"]
+  "exclude": ["node_modules", "dist"]
 }
